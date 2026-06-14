@@ -1,0 +1,401 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E CORES (VARIÁVEIS)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Paleta de Cores Soft e Minimalista */
+    --bg-principal: #faf9f6;
+    /* Branco quente/off-white (suave para os olhos) */
+    --bg-secundario: #f0f4f1;
+    /* Verde bem claro/pastel para seções de destaque */
+    --verde-forte: #3b5842;
+    /* Verde oliva escuro para títulos e botões principais */
+    --verde-soft: #709078;
+    /* Verde médio fosco para elementos secundários */
+    --texto-escuro: #2b332c;
+    /* Grafite escuro para leitura confortável (evita o preto puro) */
+    --texto-claro: #606a62;
+    /* Cinza esverdeado para textos secundários */
+    --branco-puro: #ffffff;
+
+    /* Fontes e Transições */
+    --fonte-principal: 'Plus Jakarta Sans', sans-serif;
+    --transicao: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Deixa o deslizar da página suave ao clicar no menu */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--bg-principal);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transicao);
+}
+
+/* ==========================================================================
+   CABEÇALHO (HEADER)
+   ========================================================================== */
+header {
+    background-color: rgba(250, 249, 246, 0.95);
+    /* Efeito semi-transparente */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(5px);
+    /* Desfoca levemente o fundo ao rolar */
+}
+
+.logo h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--verde-soft);
+    font-weight: 400;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--texto-claro);
+}
+
+nav a:hover {
+    color: var(--verde-forte);
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (INTRODUÇÃO VISUAL)
+   ========================================================================== */
+.hero {
+    padding: 100px 8% 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bg-secundario);
+    border-radius: 0 0 40px 40px;
+    /* Curvatura suave na parte inferior */
+    margin-bottom: 60px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--verde-forte);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 16px;
+    color: var(--texto-claro);
+    margin-bottom: 30px;
+}
+
+/* Botão Estilo Soft */
+.btn {
+    display: inline-block;
+    background-color: var(--verde-forte);
+    color: var(--branco-puro);
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(59, 88, 66, 0.15);
+    transition: var(--transicao);
+}
+
+.btn:hover {
+    background-color: var(--verde-soft);
+    transform: translateY(-2px);
+    /* Sobe levemente ao passar o mouse */
+}
+
+/* ==========================================================================
+   SEÇÃO INTRODUÇÃO
+   ========================================================================== */
+.introducao {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    padding: 0 4%;
+    text-align: center;
+}
+
+.introducao h2 {
+    font-size: 28px;
+    color: var(--texto-escuro);
+    margin-bottom: 15px;
+}
+
+.introducao p {
+    font-size: 16px;
+    color: var(--texto-claro);
+}
+
+/* ==========================================================================
+   SEÇÃO DE CARDS (TECNOLOGIAS)
+   ========================================================================== */
+.grid-section {
+    padding: 40px 8% 80px 8%;
+}
+
+.grid-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--verde-forte);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Organiza em colunas automáticas e responsivas */
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--branco-puro);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    /* Sombra quase invisível, bem sutil */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: var(--transicao);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 88, 66, 0.06);
+}
+
+.card h3 {
+    font-size: 18px;
+    color: var(--texto-escuro);
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--texto-claro);
+}
+
+/* ==========================================================================
+   SEÇÃO DESTAQUE (SUSTENTABILIDADE)
+   ========================================================================== */
+.destaque {
+    background-color: var(--bg-secundario);
+    padding: 80px 8%;
+    border-radius: 40px;
+    margin: 40px 4%;
+}
+
+.destaque-texto {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.destaque h2 {
+    font-size: 28px;
+    color: var(--verde-forte);
+    margin-bottom: 20px;
+}
+
+.destaque p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: var(--texto-escuro);
+}
+
+.destaque ul {
+    list-style: none;
+}
+
+.destaque li {
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: var(--texto-claro);
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Adiciona um pontinho verde elegante antes de cada item da lista */
+.destaque li::before {
+    content: "•";
+    color: var(--verde-soft);
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* ==========================================================================
+   SEÇÃO BENEFÍCIOS (CITAÇÃO)
+   ========================================================================== */
+.beneficios-secao {
+    padding: 80px 8%;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+blockquote {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--verde-soft);
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.beneficios-conteudo p {
+    font-size: 15px;
+    color: var(--texto-claro);
+}
+
+/* ==========================================================================
+   SEÇÃO CONTATO (FORMULÁRIO)
+   ========================================================================== */
+.contato-secao {
+    max-width: 600px;
+    margin: 0 auto 100px auto;
+    padding: 0 4%;
+    text-align: center;
+}
+
+.contato-secao h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--verde-forte);
+}
+
+.contato-secao p {
+    color: var(--texto-claro);
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+#form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs bonitos e suaves */
+#form-contato input,
+#form-contato textarea {
+    font-family: var(--fonte-principal);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: var(--branco-puro);
+    font-size: 14px;
+    color: var(--texto-escuro);
+    transition: var(--transicao);
+    outline: none;
+}
+
+#form-contato textarea {
+    height: 120px;
+    resize: none;
+    /* Impede o usuário de deformar a caixa */
+}
+
+/* Efeito ao clicar na caixinha do formulário */
+#form-contato input:focus,
+#form-contato textarea:focus {
+    border-color: var(--verde-soft);
+    box-shadow: 0 0 8px rgba(112, 144, 120, 0.15);
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: var(--branco-puro);
+    padding: 40px 8%;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    font-size: 13px;
+    color: var(--texto-claro);
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+.fontes-projeto {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.06);
+}
+
+.fontes-projeto a {
+    color: var(--verde-soft);
+    font-weight: 500;
+}
+
+.fontes-projeto a:hover {
+    color: var(--verde-forte);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (PARA FUNCIONAR BEM NO CELULAR)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .destaque {
+        padding: 40px 20px;
+        margin: 20px 10px;
+    }
+}
